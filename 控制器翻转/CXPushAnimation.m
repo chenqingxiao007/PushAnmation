@@ -17,9 +17,9 @@
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-    
     // 1.获取要跳转的目标控制器
     UIViewController *desController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
     // 2.获取来源控制器
     UIViewController *sourceController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
@@ -27,6 +27,7 @@
     [[transitionContext containerView] addSubview:desController.view];
     desController.view.alpha = 0.0;
     desController.view.backgroundColor =[UIColor blackColor];
+    
     // 4.动画
     [UIView animateWithDuration:[self transitionDuration:transitionContext]
                      animations:^{
@@ -41,10 +42,7 @@
                      }];
 }
 
-- (void)test{
- 
-    
-}
+
 @end
 
 
